@@ -10,13 +10,15 @@ body{
   background-color: #0F0F0F;
 }
 
-/* HEADER STYLING */
+
+/* ==== HEADER STYLING START==== */
 header{
   background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url(task1-images/background-image-3.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* Menu styling starts here */
 .menu-container{
   display: flex;
   width: 80%;
@@ -58,9 +60,13 @@ header{
   position: absolute;
   right: -35px;
 }
+
 #hamburger-menu{
   display: none;
 }
+/* Menu styling ends here  */
+
+/* Heeader hero styling */
 .header-hero{
   width: 80%;
   margin: auto;
@@ -86,13 +92,18 @@ header{
   font-size: 100px;
   font-weight: 700;
 }
+/* ==== HEADER STYLING ENDS ==== */
+
+
+/* ==== MAIN BODY STYLING START ==== */
 #main{
   margin-bottom: 70px;
 }
+/* About styling start  */
 #about-parent-container{
-  background: url(images/background-image-2.jpg);
-  padding-top: 80px;
-  padding-bottom: 100px;
+  background: url(task1-images/background-image-2.jpg);
+  padding-top: 100px;
+  padding-bottom: 150px;
 }
 .about-flex-row{
   width: 80%;
@@ -125,101 +136,94 @@ header{
   margin-bottom: 20px;
   font-weight: 400;
 }
-#timeline-container{
-  margin-top: 70px;
-  max-width: 60%;
+/* About styling end  */
+
+/* ==== MAIN BODY STYLING END ==== */
+
+
+/* ==== TIMELINE STYLING START ==== */
+
+.timeline_parent_container{
+  max-width: 70%;
   margin: auto;
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-.timeline-title{
-  background-color: #000000;
-  width: 400px;
-  margin: auto;
+  padding-top: 100px;
   text-align: center;
-  padding: 30px 10px;
+}
+.timeline_header{
   font-size: 30px;
   font-weight: 400;
   color: #bfb183;
-  margin-bottom: 30px;
-  box-shadow: rgba(191, 177, 131, 45) 0px 15px 20px -20px;
+  margin-bottom: 50px;
 }
-.timeline-items-con li{
-  list-style: none;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 2em;
-}
-.fa{
-  margin-right: 15px;
-  color: #BFB183;
-}
-
-.new-timline{
-  max-width: 70%;
-  margin: auto;
-}
-.new-timeline-parent-container{
+.timeline_container{
   position: relative;
+  list-style-type: none;
+  margin: 50px auto;
+  max-width: 80%;
+  text-align: center;
+  padding: 20px 50px;
 }
-.new-timeline-parent-container::after{
+.timeline_container::after{
   content: '';
   position: absolute;
-  width: 3px;
+  width: 2px;
   background-color: #bfb183;
-  border-top: 6px solid white;
   height: 100%;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 35%;
 }
-.new-timeline-container{
-  position: relative;
+.timeline_event{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.new-timeline-items{
+.timeline_content{
   position: relative;
-  background-color: #000000;
-  width: 400px;
-  padding: 50px;
+  width: 50%;
+  padding: 50px 30px;
+  text-align: left;
   font-size: 14px;
+  font-weight: 200;
+  line-height: 1.8em;
+  box-shadow: rgba(191, 177, 131, 45) 0px 10px 20px -20px;
+}
+.timeline_title{
+  font-size: 17px;
   font-weight: 400;
-  line-height: 2em;
-  box-shadow: rgba(191, 177, 131, 45) 0px 15px 20px -20px;
-}
-.new-timeline-items p{
   color: #bfb183;
+  margin-bottom: 20px;
 }
-.right{
-  float: right;
+.timeline_date{
+  font-size: 12px;
+  font-weight: 200;
 }
-.right::after{
-  content: '';
+.timeline_date::after{
   position: absolute;
-  background-color: #bfb183;
-  width: 150px;
-  height: 2px;
-  top: 50%;
-  left: -38%;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  z-index: 3;
+  border: 3px solid #bfb183;
+  background-color: #0F0F0F;
+  border-radius: 50%;
+  right: 63.9%;
 }
-.left{
-  position: relative;
-  clear: both;
-}
-.left::after{
-  content: '';
-  position: absolute;
-  background-color: #bfb183;
-  width: 150px;
-  height: 2px;
-  top: 50%;
-  right: -38%;
-}
+
+/* ==== TIMELINE STYLING END ==== */
 
 
 
+/* ==== RESPONSIVENESS ==== */
 @media only screen and (max-width: 1400px){
   .main-menu{
     width: 60%;
+  }
+  .timeline_parent_container{
+    max-width: 80%;
+  }
+  .timeline_container{
+    max-width: 90%;
   }
 }
 
@@ -243,10 +247,8 @@ header{
   .intro-paragrah{
     text-align: justify;
   }
-  #timeline-container{
-    max-width: 80%;
-    padding-left: 10px;
-    padding-right: 10px;
+  .timeline_parent_container{
+    max-width: 90%;
   }
 }
 
@@ -257,13 +259,14 @@ header{
   }
   .main-menu{
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     flex-direction: column;
     justify-content: flex-start;
     background-color: #bfb183f6;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
+    bottom: 0;
     padding-top: 70px;
     opacity: 0;
     transition: opacity 0.2s ease-in;
@@ -299,11 +302,56 @@ header{
   .header-hero{
     height: 500px;
   }
-  .timeline-title{
-    width: 90%;
-    
+  .timeline_parent_container{
+    max-width: 100%;
   }
-  .timeline-items-con li{
-    margin-bottom: 17px;
+  .timeline_container{
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .timeline_container::after{
+    left: 0;
+  }
+  .timeline_event{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeline_date{
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  .timeline_date::after{
+    left: -1%;
+  }
+  .timeline_content{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 630px){
+  .timeline_date::after{
+    left: -1.2%;
+  }
+}
+
+@media only screen and (max-width: 564px){
+  .timeline_date::after{
+    left: -1.4%;
+  }
+}
+
+@media only screen and (max-width: 468px){
+  .timeline_date::after{
+    left: -1.6%;
+  }
+}
+@media only screen and (max-width: 390px){
+  .timeline_date::after{
+    left: -1.8%;
+  }
+}
+@media only screen and (max-width: 340px){
+  .timeline_date::after{
+    left: -2%;
   }
 }
